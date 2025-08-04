@@ -138,7 +138,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     // Password
                     TextFormField(
-                      style: const TextStyle(color: Colors.white),
+                        onFieldSubmitted: (value) {
+                          _login();
+                        },
+                                              style: const TextStyle(color: Colors.white),
                                  cursorColor: Color(0xFF101a23),
                       decoration: InputDecoration(
                         labelText: 'Password',
@@ -155,6 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             hidePassword ? Icons.visibility : Icons.visibility_off,
                             color: const Color(0xFF90adcb),
                           ),
+                          
                           onPressed: () => setState(() => hidePassword = !hidePassword),
                         ),
                       ),
@@ -170,19 +174,22 @@ class _LoginScreenState extends State<LoginScreen> {
                     // Login Button
                     SizedBox(
                       width: double.infinity,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: Color(0xFF223649),
-                          backgroundColor: const Color(0xFF0bda5b),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                      child: InkWell(
+                        
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            foregroundColor: Color(0xFF223649),
+                            backgroundColor: const Color(0xFF0bda5b),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            padding: const EdgeInsets.symmetric(vertical: 16),
                           ),
-                          padding: const EdgeInsets.symmetric(vertical: 16),
-                        ),
-                        onPressed: _login,
-                        child: const Text(
-                          "Sign In",
-                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          onPressed: _login, 
+                          child: const Text(
+                            "Sign In",
+                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
