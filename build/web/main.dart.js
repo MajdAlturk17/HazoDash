@@ -81949,7 +81949,7 @@ A.ZL.prototype={
 ut(a,b){return this.akg(a,b)},
 akg(a,b){var s=0,r=A.N(t.N),q,p=this,o,n,m,l,k,j,i
 var $async$ut=A.J(function(c,d){if(c===1)return A.K(d,r)
-while(true)switch(s){case 0:k=A.ft("https://hazoapp.com/v1/api/auth/login")
+while(true)switch(s){case 0:k=A.ft("https://hazoapp.com:8083/v1/api/auth/login")
 j=t.N
 i=B.bG.SD(A.ae(["email",a,"password",b],j,j),null)
 A.fy("Request Body: "+i)
@@ -82001,7 +82001,7 @@ VU(a){var s=0,r=A.N(t.Fu),q,p,o,n,m,l,k
 var $async$vd=A.J(function(b,c){if(b===1)return A.K(c,r)
 while(true)switch(s){case 0:l=t.N
 s=3
-return A.P(A.aCg(A.ft("https://hazoapp.com/v1/api/user-profile/admin/all"),A.ae(["Authorization","Bearer "+a,"Content-Type","application/json","Accept","application/json"],l,l)),$async$vd)
+return A.P(A.aCg(A.ft("https://hazoapp.com:8083/v1/api/user-profile/admin/all"),A.ae(["Authorization","Bearer "+a,"Content-Type","application/json","Accept","application/json"],l,l)),$async$vd)
 case 3:k=c
 l=k.b
 A.fy("Response status: "+l)
@@ -82023,7 +82023,7 @@ Wh(a,b){var s=0,r=A.N(t.q5),q,p,o,n,m
 var $async$vi=A.J(function(c,d){if(c===1)return A.K(d,r)
 while(true)switch(s){case 0:n=t.N
 s=3
-return A.P(A.aCg(A.ft("https://hazoapp.com/v1/api/user-profile/"+a),A.ae(["Authorization","Bearer "+b,"Accept","application/json"],n,n)),$async$vi)
+return A.P(A.aCg(A.ft("https://hazoapp.com:8083/v1/api/user-profile/"+a),A.ae(["Authorization","Bearer "+b,"Accept","application/json"],n,n)),$async$vi)
 case 3:m=d
 n=m.b
 if(n===200){n=m.e
@@ -82040,7 +82040,7 @@ agY(a,b){var s=0,r=A.N(t.y),q,p,o
 var $async$yh=A.J(function(c,d){if(c===1)return A.K(d,r)
 while(true)switch(s){case 0:p=t.N
 s=3
-return A.P(A.aCR(A.ft("https://hazoapp.com/v1/api/user-profile/su/"+a),A.ae(["Authorization","Bearer "+b,"Content-Type","application/json"],p,p)),$async$yh)
+return A.P(A.aCR(A.ft("https://hazoapp.com:8083/v1/api/user-profile/su/"+a),A.ae(["Authorization","Bearer "+b,"Content-Type","application/json"],p,p)),$async$yh)
 case 3:o=d
 p=o.b
 if(p===200){q=!0
