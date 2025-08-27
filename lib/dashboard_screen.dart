@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hazodashborad/Features/widgets/CustomizSplash.dart';
+import 'package:hazodashborad/Features/widgets/CreateUserPage.dart';
+import 'package:hazodashborad/Features/widgets/CustomizedSplash.dart';
+import 'package:hazodashborad/Features/widgets/UploadSplash.dart';
 import 'package:hazodashborad/Features/widgets/DashBoardBody.dart';
 import 'package:hazodashborad/Features/widgets/sidebar.dart';
 import 'package:hazodashborad/Features/widgets/user_table.dart';
@@ -40,7 +42,9 @@ class _DashboardScreenState extends State<DashboardScreen> {
     {'icon': Icons.star, 'label': 'Points System'},
     {'icon': Icons.announcement, 'label': 'Announcements'},
     {'icon': Icons.settings, 'label': 'Settings'},
+    {'icon': Icons.cloud_upload, 'label': 'Upload Splash'},
     {'icon': Icons.edit, 'label': 'Customized Splash'},
+    {'icon': Icons.person, 'label': 'Create Admin User'},
   ];
 
   // هذه الدالة ستعيد الصفحة الصحيحة حسب الـ selectedIndex
@@ -69,7 +73,12 @@ class _DashboardScreenState extends State<DashboardScreen> {
       case 10:
         return const SettingsPage();
               case 11:
-        return const CustomSplash();
+        return const UploadSplash();
+                    case 12:
+        return const PhotosGalleryPage();
+                            case 13:
+        return const CreateUserPage();
+        
       default:
         return const Center(child: Text("Page Not Found"));
     }

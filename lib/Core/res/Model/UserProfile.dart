@@ -1,5 +1,5 @@
 class UserProfile {
-  final int id;
+  final int? id;
   final String displayName;
   final String country;
   final String bio;
@@ -8,7 +8,7 @@ class UserProfile {
   final String gender;
 
   UserProfile({
-    required this.id,
+     this.id,
     required this.displayName,
     required this.country,
     required this.bio,

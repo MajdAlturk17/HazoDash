@@ -6,19 +6,48 @@ import 'package:shared_preferences/shared_preferences.dart';
 class AuthService {
   final String _baseUrl = '${Url.baseUrl}/v1/api/auth';
 
+
+  String? _extractRoleFromJwt(String jwt) {
+    try {
+      final raw = jwt.startsWith('Bearer ')
+          ? jwt.substring(7).trim()
+          : jwt.trim();
+
+      final parts = raw.split('.');
+      if (parts.length != 3) return null;
+
+      String payloadB64 = parts[1];
+      while (payloadB64.length % 4 != 0) {
+        payloadB64 += '=';
+      }
+      final payloadMap = json.decode(utf8.decode(base64Url.decode(payloadB64)));
+
+      if (payloadMap['role'] != null) return payloadMap['role'].toString();
+
+      if (payloadMap['roles'] is List &&
+          (payloadMap['roles'] as List).isNotEmpty) {
+        return payloadMap['roles'][0].toString();
+      }
+
+      if (payloadMap['authorities'] is List &&
+          (payloadMap['authorities'] as List).isNotEmpty) {
+        return payloadMap['authorities'][0].toString();
+      }
+
+      return null;
+    } catch (_) {
+      return null;
+    }
+  }
+
   Future<String> login({
     required String email,
     required String password,
   }) async {
     final url = Uri.parse('$_baseUrl/login');
 
-    // إنشاء الجسم
-    final body = jsonEncode({
-      'email': email,
-      'password': password,
-    });
+    final body = jsonEncode({'email': email, 'password': password});
 
-    // طباعة الجسم قبل الإرسال
     print("Request Body: $body");
     print("Request URL: $url");
 
@@ -31,15 +60,32 @@ class AuthService {
       body: body,
     );
 
-    // طباعة الاستجابة للتحقق منها
     print("Response Body: ${response.body}");
+    print("Response status: ${response.statusCode}");
 
     if (response.statusCode == 200) {
-      // إذا كانت الاستجابة نصًا غير صالح لـ JSON
       if (response.body.startsWith('token:')) {
-        final String token = response.body.split(':')[1].trim(); // استخراج التوكن
-        await _storeToken(token); // تخزين التوكن
+        var token = response.body.split(':')[1].trim();
+
+        // استخرج الدور
+        final role = _extractRoleFromJwt(token);
+        final isAdmin = (role ?? '').toUpperCase().contains('ADMIN');
+
+        print("Role: $role | is_admin: $isAdmin");
+        if (!isAdmin) {
+          throw Exception("Access denied: Admins only.");
+        }
+
+
+        await _storeToken(token);
+
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('user_role', role ?? '');
+        await prefs.setBool('is_admin', isAdmin);
+
         print("Token stored: $token");
+        print("Role: $role | is_admin: $isAdmin");
+
         return token;
       } else {
         throw Exception('Unexpected response format: ${response.body}');
