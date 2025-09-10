@@ -87020,7 +87020,7 @@ return o}return null}catch(n){return null}},
 mG(a,b){return this.anW(a,b)},
 anW(a,b){var s=0,r=A.L(t.N),q,p=this,o,n,m,l,k,j,i,h,g,f,e
 var $async$mG=A.H(function(c,d){if(c===1)return A.I(d,r)
-while(true)switch(s){case 0:g=A.e0("http://31.97.125.84:8083/v1/api/auth/login")
+while(true)switch(s){case 0:g=A.e0("https://hazoapp.com:8083/v1/api/auth/login")
 f=t.N
 e=B.av.uV(A.a3(["email",a,"password",b],f,f),null)
 A.cv("Request Body: "+e)
@@ -87096,7 +87096,7 @@ Yy(a){var s=0,r=A.L(t.NT),q,p,o,n,m,l
 var $async$wq=A.H(function(b,c){if(b===1)return A.I(c,r)
 while(true)switch(s){case 0:m=t.N
 s=3
-return A.N(A.aAZ(A.e0("http://31.97.125.84:8083/v1/api/admin/photos/all"),A.a3(["Accept","application/json","Content-Type","application/json"],m,m)),$async$wq)
+return A.N(A.aAZ(A.e0("https://hazoapp.com:8083/v1/api/admin/photos/all"),A.a3(["Accept","application/json","Content-Type","application/json"],m,m)),$async$wq)
 case 3:l=c
 m=l.b
 A.cv(m)
@@ -87116,7 +87116,7 @@ apl(a,b,c){var s=0,r=A.L(t.H),q,p
 var $async$vU=A.H(function(d,e){if(d===1)return A.I(e,r)
 while(true)switch(s){case 0:q=t.N
 s=2
-return A.N(A.aB8(A.e0("http://31.97.125.84:8083/v1/api/admin/photos/"+a+"/patch").XG(0,A.a3(["selected",B.cQ.k(b)],q,t.z)),null,A.a3(["Authorization","Bearer "+c,"Accept","application/json","Content-Type","application/json"],q,q)),$async$vU)
+return A.N(A.aB8(A.e0("https://hazoapp.com:8083/v1/api/admin/photos/"+a+"/patch").XG(0,A.a3(["selected",B.cQ.k(b)],q,t.z)),null,A.a3(["Authorization","Bearer "+c,"Accept","application/json","Content-Type","application/json"],q,q)),$async$vU)
 case 2:p=e
 q=p.b
 if(q!==200)throw A.e(A.cU("Failed to update photo selection: "+q+" - "+p.gkU(0)))
@@ -87134,9 +87134,9 @@ Yz(a){var s=0,r=A.L(t.Ni),q,p,o,n,m,l,k
 var $async$rf=A.H(function(b,c){if(b===1)return A.I(c,r)
 while(true)switch(s){case 0:l=t.N
 s=3
-return A.N(A.aAZ(A.e0("http://31.97.125.84:8083/v1/api/admin/users/all"),A.a3(["Authorization","Bearer "+a,"Content-Type","application/json","Accept","application/json"],l,l)),$async$rf)
+return A.N(A.aAZ(A.e0("https://hazoapp.com:8083/v1/api/admin/users/all"),A.a3(["Authorization","Bearer "+a,"Content-Type","application/json","Accept","application/json"],l,l)),$async$rf)
 case 3:k=c
-A.cv("http://31.97.125.84:8083/v1/api/")
+A.cv("https://hazoapp.com:8083/v1/api/")
 l=k.b
 A.cv("Response status: "+l)
 p=k.e
@@ -87155,7 +87155,7 @@ return A.K($async$rf,r)},
 BV(a,b,c){return this.aqL(a,b,c)},
 aqL(a,b,c){var s=0,r=A.L(t.y),q,p,o,n,m
 var $async$BV=A.H(function(d,e){if(d===1)return A.I(e,r)
-while(true)switch(s){case 0:p=A.e0("http://31.97.125.84:8083/v1/api/admin/users/"+c+"/patch")
+while(true)switch(s){case 0:p=A.e0("https://hazoapp.com:8083/v1/api/admin/users/"+c+"/patch")
 o=t.N
 n=A.a3(["Authorization","Bearer "+b,"Accept","application/json","Content-Type","application/json"],o,o)
 s=3
@@ -87170,13 +87170,13 @@ return A.K($async$BV,r)},
 rp(a,b){return this.YX(a,b)},
 YX(a,b){var s=0,r=A.L(t.q5),q,p,o,n,m,l,k,j
 var $async$rp=A.H(function(c,d){if(c===1)return A.I(d,r)
-while(true)switch(s){case 0:l=A.e0("http://31.97.125.84:8083/v1/api/user-profile/"+a)
+while(true)switch(s){case 0:l=A.e0("https://hazoapp.com:8083/v1/api/user-profile/"+a)
 k=t.N
 s=3
 return A.N(A.aAZ(l,A.a3(["Authorization","Bearer "+b,"Accept","application/json"],k,k)),$async$rp)
 case 3:j=d
 A.cv(l)
-A.cv("http://31.97.125.84:8083/v1/api/")
+A.cv("https://hazoapp.com:8083/v1/api/")
 k=j.b
 p=""+k
 A.cv("Response status: "+p)
@@ -87195,7 +87195,7 @@ aky(a,b){var s=0,r=A.L(t.y),q,p,o
 var $async$zM=A.H(function(c,d){if(c===1)return A.I(d,r)
 while(true)switch(s){case 0:p=t.N
 s=3
-return A.N(A.aJ3(A.e0("http://31.97.125.84:8083/v1/api/user-profile/su/"+a),A.a3(["Authorization","Bearer "+b,"Content-Type","application/json"],p,p)),$async$zM)
+return A.N(A.aJ3(A.e0("https://hazoapp.com:8083/v1/api/user-profile/su/"+a),A.a3(["Authorization","Bearer "+b,"Content-Type","application/json"],p,p)),$async$zM)
 case 3:o=d
 p=o.b
 if(p===200){q=!0
@@ -87208,7 +87208,7 @@ return A.K($async$zM,r)},
 vV(a,b,c,d,e,f,g){return this.apm(a,b,c,d,e,f,g)},
 apm(a,b,c,d,e,f,g){var s=0,r=A.L(t.q5),q,p=this,o,n,m,l,k,j
 var $async$vV=A.H(function(h,i){if(h===1)return A.I(i,r)
-while(true)switch(s){case 0:l=A.e0("http://31.97.125.84:8083/v1/api/admin/user-profile/"+g+"/patch")
+while(true)switch(s){case 0:l=A.e0("https://hazoapp.com:8083/v1/api/admin/user-profile/"+g+"/patch")
 k=t.N
 j=A.x(k,t.z)
 if(d!=null&&B.c.cn(d).length!==0)j.m(0,"displayName",B.c.cn(d))
@@ -87250,7 +87250,7 @@ return A.K($async$vV,r)},
 wn(a,b,c){return this.aqN(a,b,c)},
 aqN(a4,a5,a6){var s=0,r=A.L(t.z),q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3
 var $async$wn=A.H(function(a7,a8){if(a7===1)return A.I(a8,r)
-while(true)switch(s){case 0:a1=A.aQ7("POST",A.e0("http://31.97.125.84:8083/v1/api/admin/photos/new/list"))
+while(true)switch(s){case 0:a1=A.aQ7("POST",A.e0("https://hazoapp.com:8083/v1/api/admin/photos/new/list"))
 a2=a1.r
 a2.m(0,"Authorization","Bearer "+a6)
 a2.m(0,"Accept","application/json")
@@ -87288,7 +87288,7 @@ akl(a,b,c,d,e,f){var s=0,r=A.L(t.sE),q,p,o,n
 var $async$zH=A.H(function(g,h){if(g===1)return A.I(h,r)
 while(true)switch(s){case 0:o=t.N
 s=3
-return A.N(A.aIL(A.e0("http://31.97.125.84:8083/v1/api/auth/su/create"),B.av.uV(A.a3(["fullName",b,"email",a,"phoneNumber",d,"role",e,"password",c],o,o),null),A.a3(["Authorization","Bearer "+f,"Content-Type","application/json","Accept","application/json"],o,o)),$async$zH)
+return A.N(A.aIL(A.e0("https://hazoapp.com:8083/v1/api/auth/su/create"),B.av.uV(A.a3(["fullName",b,"email",a,"phoneNumber",d,"role",e,"password",c],o,o),null),A.a3(["Authorization","Bearer "+f,"Content-Type","application/json","Accept","application/json"],o,o)),$async$zH)
 case 3:n=h
 A.cv(e)
 o=n.b
